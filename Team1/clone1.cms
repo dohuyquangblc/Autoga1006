@@ -1,0 +1,84 @@
+﻿#name("Clone1")
+getscreen
+#autorun
+$tk = TFREAD("taikhoan\\taikhoan.txt",2)
+$wnd1 = wndfind($tk)
+$x = TFREAD("taikhoan\\toado.txt",3)
+$y = TFREAD("taikhoan\\toado.txt",4)
+$d=150
+$r=100
+WNDSETINFO($wnd1,$x,$y,$d,$r) 
+
+$reg = TFREAD("ht\\checkrg.txt",1)
+
+#includer("ht\\mknclone.txt") 
+
+hset($wnd1,1)
+waitms(30)
+LCLICK(1,1)
+$Lmh = $Lmh + 1
+
+Logwrite( pxl(134,67))
+
+
+
+
+
+getscreen
+
+if_pixel_in(131,83,131,83,13498623) // thoat p
+ print( "thoat phong ")
+   LCLICK(129,57)  // 1650761
+    waitms(1000)
+end_if
+
+
+
+if_pixel_in(78,50,78,50,532280) // nhan moi
+ print( "nhan loi moi ")
+   LCLICK(53,37)  // 3571866
+
+
+  waitms(2000)
+end_if
+
+if_pixel_in(132,83,132,83,11859455,9093587,15793663) // chuan bi
+// print( "chuan bi ")
+LCLICK(126,49)  // 463129
+  
+$Lmh = 0
+$Turn = 0
+$loilatthe = 0
+$vitri = 0
+$loiss = 0
+
+ waitms(1000)
+end_if
+
+
+
+//-------Nhan tun------
+
+getscreen 
+
+if_pixel_in(74,47,74,47,14284287)
+keypress(#P)
+ waitms(2000)
+end_if
+
+
+//-------Lat the------
+ getscreen 
+
+if_pixel_in(135,37,135,37,5228791) 
+ print( "lat the ")
+   waitms(7000)
+   LCLICK(85,14)  // 15127489
+   waitms(800)
+   LCLICK(85,30)  // 15389113
+   waitms(800)
+   LCLICK(85,52)  // 1248256
+   waitms(800)
+   LCLICK(49,36)  // 726023
+  
+end_if
