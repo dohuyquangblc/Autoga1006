@@ -1,0 +1,22 @@
+﻿#name("sk3d") 
+#autorun    
+#includer("sub.xml") 
+
+ team(1,1,2)
+
+
+//moiban()
+
+batdau()
+
+chonpb(3,3,1,1)
+
+
+latthe(1,21)
+
+
+
+	   
+	   
+
+	   
