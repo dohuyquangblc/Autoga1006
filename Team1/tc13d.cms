@@ -1,4 +1,4 @@
-﻿#name("tc8d") 
+﻿#name("tc13d") 
 #autorun    
 #includer("sub.xml") 
 
@@ -9,7 +9,7 @@ team(1,1,2)
 
 batdau()
 
-chonpb(2,8,1,1)
+chonpb(2,13,1,1)
 
 
 latthe(1,21)
