@@ -7,6 +7,23 @@ team(1,1,2)
 
 //moiban()
 
+ getscreen 
+IF($da_go == 0)
+   IF_PIXEL_IN(305,238,305,238, 4558277, 1455459)   // bat dau
+      $da_go = 1 //
+
+      print("Dang go aim...")
+      waitms(2000)        
+      keypress(13) // Enter mở chat
+      waitms(1000)        
+      keystring("quaiphu")
+      waitms(1000)
+      keypress(13) // Enter gửi
+      print(" go aim xong...")
+      waitms(1000)
+   END_IF
+END_IF
+
 batdau()
 
 chonpb(4,4,1,1)
