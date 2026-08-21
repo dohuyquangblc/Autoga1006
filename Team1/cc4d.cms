@@ -24,6 +24,19 @@ IF($da_go == 0)
    END_IF
 END_IF
 
+ getscreen
+if_pixel_in(23,239,23,239,3801064)  
+print("Dang go aim...")
+      waitms(3000)        
+      keypress(13) // Enter mở chat
+      waitms(1000)        
+      keystring("quaiphu")
+      waitms(1000)
+      keypress(13) // Enter gửi
+      print(" go aim xong...")
+      waitms(1000)
+end_if 
+
 batdau()
 
 chonpb(4,4,1,1)
