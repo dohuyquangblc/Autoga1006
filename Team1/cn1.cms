@@ -1,0 +1,53 @@
+﻿#name("quay ruong") 
+#autorun    
+$tk = TFREAD("taikhoan\\taikhoan.txt",1)
+$wnd1 = wndfind($tk)
+$x = TFREAD("taikhoan\\toado.txt",1)
+$y = TFREAD("taikhoan\\toado.txt",2)
+$d=500
+$r=350
+WNDSETINFO($wnd1,$x,$y,$d,$r) 
+$vk = TFREAD("ht\\gocvk.txt",1)
+$reg = TFREAD("ht\\checkrg.txt",1)
+$Guild = TFREAD("ht\\Guild.txt",1)
+hset($wnd1,1)
+waitms(10)
+LCLICK(1,1)
+
+	   
+getscreen
+//mo ruong
+if_pixel_in(426,182,426,182,3034492) 
+LCLICK(428,174)  // 1717860
+ print("click dao cu")
+ waitms(2000)
+end_if	 
+  
+getscreen
+//mo ruong
+if(pxl(426,182) = 9616331)
+LCLICK(268,225)  // 13426919
+waitms(1000)
+LCLICK(273,231)  // 13426919
+ print("mo ruong")
+end_if
+
+getscreen
+//quay ruong
+if(pxl(249,206) = 2038782)
+LCLICK(246,172)  // 3499143
+waitms(50)
+ print("quay ruong")
+
+
+else
+
+// day ruong
+if(pxl(328,298) != 3951966)
+LCLICK(339,21)  // 14796718
+waitms(1000)
+keypress(#enter)
+ print("full ruong")
+end_if 
+end_if
+	   
