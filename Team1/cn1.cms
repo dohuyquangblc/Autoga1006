@@ -20,7 +20,7 @@ getscreen
 if_pixel_in(426,182,426,182,3034492) 
 LCLICK(428,174)  // 1717860
  print("click dao cu")
- waitms(2000)
+ waitms(1000)
 end_if	 
   
 getscreen
@@ -36,18 +36,21 @@ getscreen
 //quay ruong
 if(pxl(249,206) = 2038782)
 LCLICK(246,172)  // 3499143
-waitms(50)
+waitms(10)
  print("quay ruong")
 
 
 else
 
 // day ruong
-if(pxl(328,298) != 3951966)
+if_pixel_in(249,206,249,206,6250335,3895437) 
 LCLICK(339,21)  // 14796718
 waitms(1000)
 keypress(#enter)
  print("full ruong")
+waitms(1000) 
 end_if 
 end_if
+
+
 	   
