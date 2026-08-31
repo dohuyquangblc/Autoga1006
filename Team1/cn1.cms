@@ -21,8 +21,8 @@ if_pixel_in(426,182,426,182,3034492)
 LCLICK(428,174)  // 1717860
  print("click dao cu")
  waitms(1000)
-end_if	 
-  
+	 
+else  
 getscreen
 //mo ruong
 if(pxl(426,182) = 9616331)
@@ -30,7 +30,8 @@ LCLICK(268,225)  // 13426919
 waitms(1000)
 LCLICK(273,231)  // 13426919
  print("mo ruong")
-end_if
+ waitms(1000)
+else
 
 getscreen
 //quay ruong
@@ -49,8 +50,9 @@ waitms(1000)
 keypress(#enter)
  print("full ruong")
 waitms(1000) 
+
 end_if 
 end_if
-
-
+end_if
+end_if
 	   
