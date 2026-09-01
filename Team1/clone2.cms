@@ -1,10 +1,10 @@
 ﻿#name("Clone1")
 getscreen
 #autorun
-$tk = TFREAD("taikhoan\\taikhoan.txt",2)
+$tk = TFREAD("taikhoan\\taikhoan.txt",3)
 $wnd1 = wndfind($tk)
-$x = TFREAD("taikhoan\\toado.txt",3)
-$y = TFREAD("taikhoan\\toado.txt",4)
+$x = TFREAD("taikhoan\\toado.txt",5)
+$y = TFREAD("taikhoan\\toado.txt",6)
 $d=500
 $r=350
 WNDSETINFO($wnd1,$x,$y,$d,$r) 
