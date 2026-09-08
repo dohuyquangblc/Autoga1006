@@ -30,10 +30,76 @@ batdau()
 chonpb(3,7,1,1)
 
 
-latthe(1,21)
+latthe(1,21)    
+
+GETSCREEN
+// 2. Đến lượt mới thực hiện bò    
+if_pixel_in(239,115,239,115,15333887)
+  //        PRINT("turn"$boss_side)      
+          
+if_pixel_in(187,129,290,323,200) // thay ten boss   
+   
+      PRINT("bo phai")
+      KEYDOWN(186)
+      WAITMS(200)
+      KEYDOWN(186)
+      WAITMS(500)
+      KEYDOWN(186)
+      WAITMS(500)
+      KEYDOWN(186)
+      WAITMS(200) 
+      
+      KEYUP(186)
+      WAITMS(500) 
+      KEYPRESS(#left) 
+else 			  
+   // Trường hợp 1: Boss bên TRÁI -> Bò sang PHẢI
+IF_PIXEL_IN(171 , 129, 249, 323, 263872) 
+      PRINT("bosstrai bo phai")
+      KEYDOWN(186)
+      WAITMS(200)
+      KEYDOWN(186)
+      WAITMS(500)
+      KEYDOWN(186)
+      WAITMS(1000)
+      KEYDOWN(186)
+      WAITMS(200)
+
+      KEYUP(186)
+      WAITMS(500) 
+      KEYPRESS(#left) 
+  
+else
+
+   // Trường hợp 2: Boss bên PHẢI -> Bò sang TRÁI
+IF_PIXEL_IN(250, 129, 328, 323, 263872)   
+      PRINT("bossphai phai bo trai")
+      KEYDOWN(75)
+      WAITMS(200)
+      KEYDOWN(75)
+      WAITMS(500)
+      KEYDOWN(75)
+      WAITMS(1000)
+      KEYDOWN(75)
+      WAITMS(200)
+
+      KEYUP(75)
+      WAITMS(500) 
+      KEYPRESS(#right) //
+ else
+   PRINT("dame")
+ waitms(500)
+#includer("ht\\buff.txt")
+waitms(6000)
+
+END_IF    
+END_IF
+END_IF
+END_IF
 
 
-dame()
+
+dame2()
 
 
 	   
