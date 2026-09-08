@@ -34,10 +34,18 @@ latthe(1,21)
 
 
 GETSCREEN
-if_pixel_in(239,115,239,115,15333887)
-IF($bo = 0) 
-if_pixel_in(187,129,290,323,200) // thay ten boss   
-     
+
+// 1. Quét vùng 1 và gán giá trị 1/0 vào biến $th1
+$th1 = 0
+IF_PIXEL_IN(187, 129, 290, 323, 200)
+   $th1 = 1
+END_IF
+
+// 2. Đến lượt mới thực hiện các hành động
+IF_PIXEL_IN(239, 115, 239, 115, 15333887)
+
+   // Trường hợp TH1: $bo = 0 VÀ $th1 = 1 (Tìm thấy màu tên boss)
+   IF(($bo = 0) AND ($th1 = 1))
       PRINT("bo phai")
       KEYDOWN(186)
       WAITMS(200)
@@ -46,84 +54,57 @@ if_pixel_in(187,129,290,323,200) // thay ten boss
       KEYDOWN(186)
       WAITMS(500)
       KEYDOWN(186)
-      WAITMS(200) 
-      
-      KEYUP(186)
-      WAITMS(500) 
-      KEYPRESS(#left) 
-     $bo = 1
-END_IF 
-END_IF 	
-END_IF
-
-GETSCREEN
-// 2. Đến lượt mới thực hiện bò    
-if_pixel_in(239,115,239,115,15333887)
-  //        PRINT("turn"$boss_side)  
-	
-	   
-IF(($bo = 0) AND (PXL(187, 129) = 200)) // thay ten boss   
-     
-      PRINT("bo phai")
-      KEYDOWN(186)
-      WAITMS(200)
-      KEYDOWN(186)
-      WAITMS(500)
-      KEYDOWN(186)
-      WAITMS(500)
-      KEYDOWN(186)
-      WAITMS(200) 
-      
-      KEYUP(186)
-      WAITMS(500) 
-      KEYPRESS(#left) 
-     $bo = 1
-     
-		 else 
-      		  
-   // Trường hợp 1: Boss bên TRÁI -> Bò sang PHẢI
-IF_PIXEL_IN(171 , 129, 249, 323, 263872) 
-      PRINT("bosstrai bo phai")
-      KEYDOWN(186)
-      WAITMS(200)
-      KEYDOWN(186)
-      WAITMS(500)
-      KEYDOWN(186)
-      WAITMS(1000)
-      KEYDOWN(186)
       WAITMS(200)
 
       KEYUP(186)
-      WAITMS(500) 
-      KEYPRESS(#left) 
-  
-else
-
-   // Trường hợp 2: Boss bên PHẢI -> Bò sang TRÁI
-IF_PIXEL_IN(250, 129, 328, 323, 263872)   
-      PRINT("bossphai phai bo trai")
-      KEYDOWN(75)
-      WAITMS(200)
-      KEYDOWN(75)
       WAITMS(500)
-      KEYDOWN(75)
-      WAITMS(1000)
-      KEYDOWN(75)
-      WAITMS(200)
+      KEYPRESS(#LEFT)
+      $bo = 1
+   ELSE
+      // Trường hợp 2: Boss bên TRÁI -> Bò sang PHẢI
+      IF_PIXEL_IN(171, 129, 249, 323, 263872)
+         PRINT("bosstrai bo phai")
+         KEYDOWN(186)
+         WAITMS(200)
+         KEYDOWN(186)
+         WAITMS(500)
+         KEYDOWN(186)
+         WAITMS(1000)
+         KEYDOWN(186)
+         WAITMS(200)
 
-      KEYUP(75)
-      WAITMS(500) 
-      KEYPRESS(#right) //
- else
-   PRINT("dame")
- waitms(500)
-#includer("ht\\buff.txt")
-waitms(6000)
+         KEYUP(186)
+         WAITMS(500)
+         KEYPRESS(#LEFT)
+      ELSE
+         // Trường hợp 3: Boss bên PHẢI -> Bò sang TRÁI
+         IF_PIXEL_IN(250, 129, 328, 323, 263872)
+            PRINT("bossphai phai bo trai")
+            KEYDOWN(75)
+            WAITMS(200)
+            KEYDOWN(75)
+            WAITMS(500)
+            KEYDOWN(75)
+            WAITMS(1000)
+            KEYDOWN(75)
+            WAITMS(200)
 
-END_IF   
+            KEYUP(75)
+            WAITMS(500)
+            KEYPRESS(#RIGHT)
+         ELSE
+            // Mặc định: Dame / Buff
+            PRINT("dame")
+            WAITMS(500)
+            #include "ht\buff.txt"
+            WAITMS(6000)
+         END_IF
+      END_IF
+   END_IF
+
 END_IF
-END_IF
-END_IF
+
+WAITMS(50)
 
 
 
